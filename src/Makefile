@@ -102,8 +102,8 @@ MODULE = $(shell pwd | sed "s/.*\///" ).o
 export MODULE
 endif
 
-ifeq ($(PLATFORM),5VT)
-LINUX_SRC = /usr/src/linux-3.4.39
+ifeq ($(PLATFORM),S5P4418)
+LINUX_SRC = /usr/src/nanopi2/kernel/3.4.y
 CROSS_COMPILE = arm-linux-gnueabihf-
 endif
 
