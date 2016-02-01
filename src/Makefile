@@ -27,7 +27,8 @@ include $(RT28xx_DIR)/os/linux/config.mk
 RTMP_SRC_DIR = $(RT28xx_DIR)/RT$(MODULE)
 
 #PLATFORM: Target platform
-PLATFORM = PC
+#PLATFORM = PC
+PLATFORM = S5P4418
 #PLATFORM = 5VT
 #PLATFORM = IKANOS_V160
 #PLATFORM = IKANOS_V180
@@ -99,6 +100,11 @@ ifeq ($(TARGET), ECOS)
 MAKE = make
 MODULE = $(shell pwd | sed "s/.*\///" ).o
 export MODULE
+endif
+
+ifeq ($(PLATFORM),5VT)
+LINUX_SRC = /usr/src/linux-3.4.39
+CROSS_COMPILE = arm-linux-gnueabihf-
 endif
 
 ifeq ($(PLATFORM),5VT)
